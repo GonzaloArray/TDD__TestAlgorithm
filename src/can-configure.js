@@ -15,7 +15,7 @@ export const canConfigure = (from, to) => {
     const toLetter = to[i]
 
     const storedLetter = transformation[fromLetter]
-    console.log(storedLetter)
+
     if (storedLetter && storedLetter !== toLetter) return false
 
     transformation[fromLetter] = toLetter
