@@ -4,9 +4,10 @@ const checkStepNumber = (systemNames, stepNumbers) => {
   if (!Array.isArray(stepNumbers)) throw new Error('Step number must be an array')
   if (!Array.isArray(systemNames)) throw new Error('Systems number must be an array')
 
-  return systemNames.every((e, i) =>
-    stepNumbers[i] < stepNumbers[i + systemNames.slice(i + 1).indexOf(e) + 1
+  return systemNames.every((e, i) => {
+    return stepNumbers[i] < stepNumbers[i + systemNames.slice(i + 1).indexOf(e) + 1
     ] + !(systemNames.lastIndexOf(e) - i)
+  }
   )
 }
 
