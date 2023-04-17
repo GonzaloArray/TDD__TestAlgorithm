@@ -4,8 +4,8 @@ const getOptimalPath = (path) => {
   if (!Array.isArray(path)) throw new Error('Path must be an array')
 
   return path.reduceRight((prev, current) => {
-    return current.map((position, i) => {
-      return position + Math.min(prev[i], prev[i + 1])
+    return current.map((v, i) => {
+      return v + Math.min(prev[i], prev[i + 1])
     })
   })[0]
 }
